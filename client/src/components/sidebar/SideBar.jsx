@@ -84,8 +84,8 @@ const SideBar = () => {
             {navItems.map(({ text, icon }) => {
               if(!icon){
                 return (
-                  <div>
-                    <h3>{text}</h3>
+                  <div className={styles.listTitle}>
+                    <p>{text}</p>
                   </div>
                 )
               }
@@ -93,11 +93,11 @@ const SideBar = () => {
               const list = text.toLowerCase();
 
               return(
-                <li key={text}>
-                  <a href="">
-                    <span>{icon}</span>
-                    <span>{text}</span>
-                    <span>{<IoChevronForwardOutline />}</span>
+                <li key={text} className={styles.navList}>
+                  <a href="" className={styles.listItem}>
+                    <span style={{marginLeft: '3rem'}}>{icon}</span>
+                    <span style={{marginLeft: '2rem' }}>{text}</span>
+                    { null && <span>{<IoChevronForwardOutline />}</span>}
                   </a>
                 </li>
               )

@@ -1,6 +1,6 @@
 .sidebar{
     background-color: #142038;
-    padding: 1em;
+    padding: 1em 0;
     width: 60%;
     height: 100vh;
     position: absolute;
@@ -19,6 +19,20 @@
 
 }
 
+.listTitle{
+    margin: 2.25rem 0 1rem 3rem;
+}
+
+.navList{
+    margin: 1rem 0 0rem 0rem;
+    font-size: .9rem;
+    /* background-color: aquamarine; */
+}
+
+.listItem{
+    display: flex;
+    align-items: center;
+}
 
 @media screen and (min-width: 500px) {
     .sidebar{
