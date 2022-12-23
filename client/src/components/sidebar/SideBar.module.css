@@ -1,4 +1,32 @@
 .sidebar{
     background-color: #142038;
     padding: 1em;
+    width: 60%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.logo__container{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5em 2em 2em 3em;
+}
+
+.sidebar__logo{
+
+}
+
+
+@media screen and (min-width: 500px) {
+    .sidebar{
+        width: 350px;
+        height: 100vh;
+        position: initial;
+        top: initial;
+        left: initial;
+        transform: translateX(0);
+    }
 }
