@@ -16,12 +16,18 @@
 .logo__container{
     display: flex;
     justify-content: space-between;
-    margin: 1em 2em 2em 3em;
+    align-items: center;
+    margin: .5em 2em 2em 3em;
 }
 
 
 .listTitle{
     margin: 2.25rem 0 1rem 3rem;
+}
+
+.active{
+    background-color: #F9EBE0;
+    color: #142038;
 }
 
 .navList{
@@ -31,6 +37,11 @@
 }
 
 .listItem{
+    display: flex;
+    align-items: center;
+}
+
+.listItem span {
     display: flex;
     align-items: center;
 }

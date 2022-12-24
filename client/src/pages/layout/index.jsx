@@ -8,7 +8,7 @@ import styles from './layout.module.css'
 const Layout = () => {
     const mediaQueryList = window.matchMedia("(min-width: 500px)");
     const [ isNonMobile, setIsNonMobile ] = useState();
-    const [ isSidebarOpen, setIsSidebarOpen ] = useState(false);
+    const [ isSidebarOpen, setIsSidebarOpen ] = useState(true);
 
     const handleTabletChange = (e) => {
         setIsNonMobile(e.matches);
