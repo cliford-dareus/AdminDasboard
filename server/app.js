@@ -44,9 +44,9 @@ app.use("/sales", salesRoutes);
 
 const PORT = process.env.PORT;
 
-const start = () => {
+const start = async () => {
     try {
-        
+        await connectDB(process.env.MONGO_URI)
         app.listen(PORT, () => console.log(`Server is listening on Port ${PORT}`));
 
         /* ONLY ADD DATA ONE TIME */
