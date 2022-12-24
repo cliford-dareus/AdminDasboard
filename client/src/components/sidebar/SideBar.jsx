@@ -62,12 +62,13 @@ const navItems = [
   },
 ];
 
-const SideBar = () => {
+const SideBar = ({ isSidebarOpen, setIsSidebarOpen, isNonMobile}) => {
   return (
     <div 
-      className={styles.sidebar} 
+      className={`${styles.sidebar} ${isSidebarOpen? styles.openSidebar: ''}`} 
       style={{
         overflow: 'hidden',
+        width: isSidebarOpen? '60%' : '0%'
       }}
     >
       <div className=''>
@@ -75,7 +76,9 @@ const SideBar = () => {
           <div className={styles.logo__container}>
             <h3>SNEEKAdmin</h3>
             {/* Add this when not onn mobile divices */}
-            {<div>
+            {<div 
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            >
               <FiChevronLeft/>
             </div>}
           </div>
@@ -101,7 +104,6 @@ const SideBar = () => {
                   </a>
                 </li>
               )
-
             })}
           </ul>
         </div>
