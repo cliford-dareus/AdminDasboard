@@ -1,9 +1,9 @@
-import express from "express";
-import { getAdmins, getUserPerformance } from "../controllers/management.js";
+const express = require("express");
+const { getAdmins, getUserPerformance } = require("../controller/management");
 
 const router = express.Router();
 
 router.get("/admins", getAdmins);
 router.get("/performance/:id", getUserPerformance);
 
-export default router;
+module.exports = router;

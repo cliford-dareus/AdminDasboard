@@ -1,10 +1,10 @@
-import Product from "../models/Product.js";
-import ProductStat from "../models/ProductStat.js";
-import User from "../models/User.js";
-import Transaction from "../models/Transaction.js";
-import getCountryIso3 from "country-iso-2-to-3";
+const Product = require("../models/Product");
+const ProductStat = require("../models/ProductStat");
+const User = require("../models/User.js");
+const Transaction = require("../models/Transaction");
+const getCountryIso3 = require("country-iso-2-to-3");
 
-export const getProducts = async (req, res) => {
+const getProducts = async (req, res) => {
   try {
     const products = await Product.find();
 
@@ -26,7 +26,7 @@ export const getProducts = async (req, res) => {
   }
 };
 
-export const getCustomers = async (req, res) => {
+const getCustomers = async (req, res) => {
   try {
     const customers = await User.find({ role: "user" }).select("-password");
     res.status(200).json(customers);
@@ -35,7 +35,7 @@ export const getCustomers = async (req, res) => {
   }
 };
 
-export const getTransactions = async (req, res) => {
+const getTransactions = async (req, res) => {
   try {
     // sort should look like this: { "field": "userId", "sort": "desc"}
     const { page = 1, pageSize = 20, sort = null, search = "" } = req.query;
@@ -74,7 +74,7 @@ export const getTransactions = async (req, res) => {
   }
 };
 
-export const getGeography = async (req, res) => {
+const getGeography = async (req, res) => {
   try {
     const users = await User.find();
 
@@ -97,4 +97,11 @@ export const getGeography = async (req, res) => {
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
+};
+
+module.exports = {
+  getProducts,
+  getTransactions,
+  getCustomers,
+  getGeography
 };

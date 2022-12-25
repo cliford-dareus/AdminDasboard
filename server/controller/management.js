@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
-import User from "../models/User.js";
-import Transaction from "../models/Transaction.js";
+const mongoose = require("mongoose");
+const { User } = require("../models/User");
+const { Transaction } = require("../models/Transaction");
 
-export const getAdmins = async (req, res) => {
+const getAdmins = async (req, res) => {
   try {
     const admins = await User.find({ role: "admin" }).select("-password");
     res.status(200).json(admins);
@@ -11,7 +11,7 @@ export const getAdmins = async (req, res) => {
   }
 };
 
-export const getUserPerformance = async (req, res) => {
+const getUserPerformance = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -43,4 +43,9 @@ export const getUserPerformance = async (req, res) => {
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
+};
+
+module.exports = {
+  getAdmins,
+  getUserPerformance
 };

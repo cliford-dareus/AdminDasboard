@@ -4,26 +4,27 @@ const cors = require('cors');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-import clientRoutes from "./routes/client.js";
-import generalRoutes from "./routes/general.js";
-import managementRoutes from "./routes/management.js";
-import salesRoutes from "./routes/sales.js";
+const clientRoutes =require("./routes/user");
+const generalRoutes =require("./routes/general");
+const managementRoutes =require("./routes/management");
+const salesRoutes =require("./routes/sales");
+const connectDB = require('./db/connect');
 
 // data imports
-import User from "./models/User.js";
-import Product from "./models/Product.js";
-import ProductStat from "./models/ProductStat.js";
-import Transaction from "./models/Transaction.js";
-import OverallStat from "./models/OverallStat.js";
-import AffiliateStat from "./models/AffiliateStat.js";
-import {
+const User =require("./models/User");
+const Product =require("./models/Product");
+const ProductStat =require("./models/ProductStat");
+const Transaction =require("./models/Transaction");
+const OverallStat =require("./models/OverallStat");
+const AffiliateStat =require("./models/AffiliateStat");
+const {
   dataUser,
   dataProduct,
   dataProductStat,
   dataTransaction,
   dataOverallStat,
   dataAffiliateStat,
-} from "./data/index.js";
+} =require("./data/index");
 
 
 /* CONFIGURATION */

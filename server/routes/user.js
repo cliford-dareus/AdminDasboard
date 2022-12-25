@@ -1,10 +1,10 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   getProducts,
   getCustomers,
   getTransactions,
   getGeography,
-} from "../controllers/client.js";
+} = require("../controller/user");
 
 const router = express.Router();
 
@@ -13,4 +13,4 @@ router.get("/customers", getCustomers);
 router.get("/transactions", getTransactions);
 router.get("/geography", getGeography);
 
-export default router;
+module.exports = router;

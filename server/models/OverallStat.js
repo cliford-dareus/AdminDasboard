@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose =require("mongoose");
 
 const OverallStatSchema = new mongoose.Schema(
   {
@@ -28,5 +28,4 @@ const OverallStatSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const OverallStat = mongoose.model("OverallStat", OverallStatSchema);
-export default OverallStat;
+module.exports = mongoose.model("OverallStat", OverallStatSchema);
