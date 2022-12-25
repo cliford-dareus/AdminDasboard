@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from './SideBar.module.css';
 import { FiChevronLeft, FiGlobe, FiHome, FiShoppingCart, FiUsers } from 'react-icons/fi';
 import { IoTodayOutline, IoCalendarOutline, IoMegaphoneOutline, IoPieChartOutline, IoReceiptOutline, IoShieldOutline, IoTrendingUp, IoChevronForwardOutline } from 'react-icons/io5';
+import { useEffect } from 'react';
 
 const navItems = [
   {
@@ -64,7 +65,12 @@ const navItems = [
 ];
 
 const SideBar = ({ isSidebarOpen, setIsSidebarOpen, isNonMobile}) => {
-  const [ active, setAtive ] = useState('');
+  const [ active, setActive ] = useState('');
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setActive(pathname.substring(1));
+  }, [pathname]);
 
   return (
     <div 
@@ -104,7 +110,7 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen, isNonMobile}) => {
                   className = {`${styles.navList} ${list === active? styles.active : ''}`}
                   onClick = {()=> {
                     // navigate(`/${list}`) 
-                    setAtive(list)
+                    setActive(list)
                   }}
                 >
                   <Link

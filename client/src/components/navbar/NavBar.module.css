@@ -7,7 +7,33 @@
 }
 
 .container{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.leftside{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.inputcontainer{
+    display: flex;
+    align-items: center;
+    background-color: #142038;
+    padding: .5em 1em;
+}
+
+.inputcontainer input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.rigthside{
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
 }

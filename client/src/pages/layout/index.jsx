@@ -16,7 +16,11 @@ const Layout = () => {
 
     useEffect(()=> {
         mediaQueryList.addListener(handleTabletChange);
-    },[])
+
+        return () => {
+            mediaQueryList.removeListener(handleTabletChange);
+        }
+    },[]);
 
   return (
     <div className={styles.layout}>
