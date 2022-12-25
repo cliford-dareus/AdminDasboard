@@ -3,7 +3,7 @@ import styles from './NavBar.module.css';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { IoMoonOutline, IoSearchOutline, IoSettingsOutline } from 'react-icons/io5';
 
-const NavBar = ({ setIsSidebarOpen, isSidebarOpen }) => {
+const NavBar = ({ setIsSidebarOpen, isSidebarOpen, user }) => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -37,8 +37,22 @@ const NavBar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                 <IoSettingsOutline />
               </div>
               
-              <div className=''></div>
-              <div className=''></div>
+              <div className={styles.userPanel}>
+              <div className={styles.userContainer}>
+                <div 
+                  style={{ display: 'flex', alignItems: 'center'}}
+                >
+                  <img src="" alt="" className={styles.userImage}/>
+                  <div style={{display: 'flex',flexDirection: 'column', marginLeft: '1rem'}} >
+                    <p><b>{user.name}</b></p>
+                    <p>{user.occupation}</p>
+                  </div>
+                </div>
+                <div>
+                  <IoSettingsOutline />
+                </div>
+              </div>
+              </div>
             </div>
       </div>
     </header>

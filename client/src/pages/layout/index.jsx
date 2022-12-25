@@ -37,7 +37,7 @@ const Layout = () => {
 
         <main className={styles.main}>
             <NavBar
-                user= { data }
+                user= { data || {} }
                 isSidebarOpen={isSidebarOpen}
                 setIsSidebarOpen={setIsSidebarOpen}
             />

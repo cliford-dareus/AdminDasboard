@@ -136,9 +136,9 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen, isNonMobile, user }) => {
                 <div 
                   style={{ display: 'flex', alignItems: 'center'}}
                 >
-                  <img src="" alt="" />
-                  <div>
-                    <p><strong>{user.name}</strong></p>
+                  <img src="" alt="" className={styles.userImage}/>
+                  <div style={{display: 'flex',flexDirection: 'column', marginLeft: '1rem'}} >
+                    <p><b>{user.name}</b></p>
                     <p>{user.occupation}</p>
                   </div>
                 </div>
