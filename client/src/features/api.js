@@ -69,7 +69,7 @@ export const apiSlice = createApi({
 });
 
 export const {
-  useGetUserQuery,
+  useGetUSerQuery,
   useGetProductsQuery,
   useGetCustomersQuery,
   useGetTransactionsQuery,
