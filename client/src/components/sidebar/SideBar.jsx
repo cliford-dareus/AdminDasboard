@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import styles from './SideBar.module.css';
 import { FiChevronLeft, FiGlobe, FiHome, FiShoppingCart, FiUsers } from 'react-icons/fi';
-import { IoTodayOutline, IoCalendarOutline, IoMegaphoneOutline, IoPieChartOutline, IoReceiptOutline, IoShieldOutline, IoTrendingUp, IoChevronForwardOutline } from 'react-icons/io5';
+import { IoTodayOutline, IoCalendarOutline, IoMegaphoneOutline, IoPieChartOutline, IoReceiptOutline, IoShieldOutline, IoTrendingUp, IoChevronForwardOutline, IoSettingsOutline } from 'react-icons/io5';
 import { useEffect } from 'react';
 
 const navItems = [
@@ -64,7 +64,7 @@ const navItems = [
   },
 ];
 
-const SideBar = ({ isSidebarOpen, setIsSidebarOpen, isNonMobile}) => {
+const SideBar = ({ isSidebarOpen, setIsSidebarOpen, isNonMobile, user }) => {
   const [ active, setActive ] = useState('');
   const { pathname } = useLocation();
 
@@ -131,7 +131,22 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen, isNonMobile}) => {
           </ul>
         </div>
 
-
+            <div className={styles.userPanel}>
+              <div className={styles.userContainer}>
+                <div 
+                  style={{ display: 'flex', alignItems: 'center'}}
+                >
+                  <img src="" alt="" />
+                  <div>
+                    <p><strong>{user.name}</strong></p>
+                    <p>{user.occupation}</p>
+                  </div>
+                </div>
+                <div>
+                  <IoSettingsOutline />
+                </div>
+              </div>
+            </div>
       </div>
     </div>
   )
