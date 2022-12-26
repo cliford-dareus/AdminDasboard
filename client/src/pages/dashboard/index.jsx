@@ -4,6 +4,7 @@ import { IoDownloadOutline, IoMailOutline, IoMegaphoneOutline, IoPersonAddOutlin
 import { useGetDashboardQuery } from '../../features/api';
 import styles from './dashboard.module.css'
 import StatBox from '../../components/statBox/statBox';
+import OverviewChart from '../../components/overView/OverviewChart';
 
 const Dashboard = () => {
   const { data, isLoading } = useGetDashboardQuery();
@@ -48,7 +49,10 @@ const Dashboard = () => {
           <div
             className={styles.largebox}
           >
-            dd
+            <OverviewChart
+              view="sales"
+              
+            />
           </div>
 
           <StatBox
