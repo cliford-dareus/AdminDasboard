@@ -1,0 +1,17 @@
+.container{
+    width: 100%;
+    font-size: .8rem;
+    margin-top: 1rem;
+}
+
+.table{
+    width: 100%;
+    border: 1px solid whitesmoke;
+    padding: .5rem;
+    border-collapse: collapse;
+}
+
+.border{
+    border: 1px solid whitesmoke;
+    padding: 0 .5rem;
+}

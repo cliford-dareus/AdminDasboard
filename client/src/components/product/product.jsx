@@ -32,7 +32,6 @@ export const Product = ({
     stat,
   }) => {
     const [ isCollapse, setCollapse ] = useState(false);
-    const [ isRating, setIsRating ] = useState(rating)
 
     useEffect(() => {
       if(!isCollapse) return
