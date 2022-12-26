@@ -1,0 +1,19 @@
+.minibox{
+    grid-column: span 2;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: aquamarine; */
+    border-radius: 1rem;
+    background-color: #142038;
+    font-size: .8rem;
+    padding: 1.5em ;
+    gap: .5rem;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,10 +1,17 @@
 import React from 'react';
+import styles from './Header.module.css';
 
 const Header = ({ title, subTitle }) => {
   return (
-    <div>
-        <p>{title}</p>
-        <p>{subTitle}</p>
+    <div className=''>
+        <p 
+          className={styles.titles}>
+            {title}
+        </p>
+        <p 
+          className={styles.subTitle}>
+            {subTitle}
+        </p>
     </div>
   )
 }
