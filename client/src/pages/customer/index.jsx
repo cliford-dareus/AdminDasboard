@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React from 'react';
 import Header from '../../components/hearder/Header';
 import { useGetCustomersQuery } from '../../features/api';
 import styles from './Customer.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment } from '../../features/pagination';
+import { IoAdd, IoRemove } from 'react-icons/io5';
 
 const Customer = () => {
     const { data, isLoading } = useGetCustomersQuery();
@@ -106,11 +106,15 @@ const Customer = () => {
         <div className={styles.pagination}>
             <button
                 onClick={() => dispatch(decrement())}
-            >-</button>
+            >
+                <IoRemove />
+            </button>
             <div>{page.page}</div>
             <button
                 onClick={() => dispatch(increment())}
-            >+</button>
+            >
+                <IoAdd />
+            </button>
         </div>
     </div>
   )

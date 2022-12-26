@@ -19,7 +19,23 @@
 
 .pagination{
     position: absolute;
-    bottom: 2rem;
+    bottom: 3rem;
     right: 1em;
     display: flex;
+    border: 1px solid rgba(245, 245, 245, 0.20);
+}
+
+.pagination button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: .2rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.pagination div{
+    padding-inline: 2rem;
+    border-left: 1px solid rgba(245, 245, 245, 0.20);
+    border-right: 1px solid rgba(245, 245, 245, 0.20);
 }

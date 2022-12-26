@@ -5,6 +5,7 @@ import Layout from './pages/layout';
 import Dashboard from './pages/dashboard';
 import Products from './pages/products';
 import Customer from './pages/customer';
+import Transaction from './pages/transaction';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
             <Route path='/dashboard' element={ <Dashboard/>}/>
             <Route path='/products' element={ <Products/>} />
             <Route path='/customers' element={ <Customer/>} />
+            <Route path='/transactions' element={ <Transaction/>} />
           </Route>
         </Routes>
       </BrowserRouter>

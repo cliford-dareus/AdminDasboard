@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     value : {
         start : 0,
-        end : 20,
+        end : 22,
         page: 1
     }
 };
@@ -13,11 +13,11 @@ const paginateSlice = createSlice({
     initialState,
     reducers: {
         increment: (state) => {
-            { state.value.start += 20, state.value.end+= 20, state.value.page++ }
+            { state.value.start += 22, state.value.end+= 22, state.value.page++ }
         },
         decrement: (state) => {
             if(state.value.start === 0) return;
-            { state.value.start -= 20, state.value.end-= 20, state.value.page-- }
+            { state.value.start -= 22, state.value.end-= 22, state.value.page-- }
         }
     }
 });
