@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/hearder/header';
-import { IoDownloadOutline, IoMailOutline, IoMegaphoneOutline } from 'react-icons/io5';
+import { IoDownloadOutline, IoMailOutline, IoMegaphoneOutline, IoPersonAddOutline, IoStatsChartOutline } from 'react-icons/io5';
 import { useGetDashboardQuery } from '../../features/api';
 import styles from './dashboard.module.css'
 import StatBox from '../../components/statBox/statBox';
@@ -50,6 +50,22 @@ const Dashboard = () => {
           >
             dd
           </div>
+
+          <StatBox
+            title="Monthly Sales"
+            value={data && data.thisMonthStats.totalSales}
+            increase="+5%"
+            description="Since last month"
+            icon={ <IoPersonAddOutline /> }
+          />
+
+          <StatBox 
+            title="Yearly Sales"
+            value={data && data.yearlySalesTotal}
+            increase="+43%"
+            description="Since last month"
+            icon={<IoStatsChartOutline />}
+          />
         
       </div>
     </div>
