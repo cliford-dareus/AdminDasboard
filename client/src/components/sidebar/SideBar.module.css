@@ -2,7 +2,7 @@
     background-color: #142038;
     padding: 1em 0;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     width: 60%;
     top: 0;
     left: 0;

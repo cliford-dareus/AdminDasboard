@@ -8,11 +8,11 @@ const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
 
   return (
-    <div className=''>
+    <div className={styles.product}>
       <Header title='PRODUCTS' subTitle="See your list of products." />
       { data || !isLoading? (
         <div
-          className=''
+          className={styles.container}
         >
           {data?.map(
             ({
@@ -39,7 +39,7 @@ const Products = () => {
             )
           )}
         </div>
-      ) : <> LLOADING ...</>}
+      ) : <> LOADING ...</>}
     </div>
   )
 };

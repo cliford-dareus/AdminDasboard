@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import styles from './productCard.module.css';
 
 export const Product = ({
@@ -11,57 +12,66 @@ export const Product = ({
     supply,
     stat,
   }) => {
+    const [ isCollapse, setCollapse ] = useState(false);
   
     return (
       <div
         className={styles.card}
       >
-        <CardContent>
-          <p
-            sx={{ fontSize: 14 }}
-            color={theme.palette.secondary[700]}
-            gutterBottom
-          >
+        <div>
+          <p style={{
+            textTransform: 'uppercase',
+            fontSize: '.6rem'
+          }}>
             {category}
           </p>
-          <p variant="h5" component="div">
+          <p style={{
+            fontSize: '.9rem'
+          }}>
             {name}
           </p>
-          <p sx={{ mb: "1.5rem" }} color={theme.palette.secondary[400]}>
+          <p style={{
+            textTransform: 'uppercase',
+            fontSize: '.7rem',
+            lineHeight: '1'
+          }}>
             ${Number(price).toFixed(2)}
           </p>
-          <Rating value={rating} readOnly />
+          {/* <Rating value={rating} readOnly /> */}
   
-          <p variant="body2">{description}</p>
-        </CardContent>
-        <CardActions>
-          <Button
-            variant="primary"
-            size="small"
-            onClick={() => setIsExpanded(!isExpanded)}
+          <p style={{
+            fontSize: '.7rem',
+            lineHeight: '1.5',
+            marginBottom: '1rem'
+          }}>{description}</p>
+        </div>
+        <div>
+          <button
+            // variant="primary"
+            // size="small"
+            className={styles.btn}
+            onClick={() => setCollapse(!isCollapse)}
           >
             See More
-          </Button>
-        </CardActions>
-        <Collapse
-          in={isExpanded}
-          timeout="auto"
-          unmountOnExit
-          sx={{
-            color: theme.palette.neutral[300],
+          </button>
+        </div>
+        <div 
+          className={styles.collapse}
+          style={{
+            height: isCollapse? '100%': '0'
           }}
         >
-          <CardContent>
-            <Typography>id: {_id}</Typography>
-            <Typography>Supply Left: {supply}</Typography>
-            <Typography>
+          <div className={styles.collapseContent}>
+            <p>id: {_id}</p>
+            <p>Supply Left: {supply}</p>
+            <p>
               Yearly Sales This Year: {stat.yearlySalesTotal}
-            </Typography>
-            <Typography>
+            </p>
+            <p>
               Yearly Units Sold This Year: {stat.yearlyTotalSoldUnits}
-            </Typography>
-          </CardContent>
-        </Collapse>
+            </p>
+          </div>
+        </div>
       </div>
     );
   };
