@@ -80,13 +80,15 @@ const Dashboard = () => {
           <div
             className={styles.mediumbox}
           >
-            <p>Sales by Category</p>
+            <p style={{ fontSize: '.8rem'}}>Sales by Category</p>
 
-            <BreakdownChart 
-              
-            />
+            <BreakdownChart />
 
-            <p>
+            <p style={{ 
+                fontSize: '.8rem',
+                lineHeight: '1.1'
+              }}
+            >
               Breakdown of real states and information via category for revenue
               made for this year and total sales.
             </p>

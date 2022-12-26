@@ -10,18 +10,18 @@ const BreakdownChart = ({ isDashboard = false}) => {
 
     const colors = [
         '#142038',
-        '#142038',
-        '#142038',
+        '#F9EBE0',
+        '#F9EBE0',
         '#142038',
       ];
-      const formattedData = Object.entries(data.salesByCategory).map(
-        ([category, sales], i) => ({
+
+    const formattedData = Object.entries(data?.salesByCategory)?.map(([category, sales], i) => ({
           id: category,
           label: category,
           value: sales,
           color: colors[i],
         })
-      );
+    );
 
   return (
     <div
@@ -65,7 +65,7 @@ const BreakdownChart = ({ isDashboard = false}) => {
         colors={{ datum: "data.color" }}
         margin={
           isDashboard
-            ? { top: 40, right: 80, bottom: 100, left: 50 }
+            ? { top: 40, right: 40, bottom: 100, left: 50 }
             : { top: 40, right: 80, bottom: 80, left: 80 }
         }
         sortByValue={true}
@@ -111,19 +111,7 @@ const BreakdownChart = ({ isDashboard = false}) => {
           },
         ]}
       />
-      <div
-        // position="absolute"
-        // top="50%"
-        // left="50%"
-        // color={'#142038'}
-        // textAlign="center"
-        // pointerEvents="none"
-        // sx={{
-        //   transform: isDashboard
-        //     ? "translate(-75%, -170%)"
-        //     : "translate(-50%, -100%)",
-        // }}
-      >
+      <div className={styles.desc}>
         <p>
           {!isDashboard && "Total:"} ${data.yearlySalesTotal}
         </p>

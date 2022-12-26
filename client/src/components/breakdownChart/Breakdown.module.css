@@ -3,5 +3,20 @@
       /* width={undefined} */
       /* minHeight={isDashboard ? "325px" : undefined} */
       /* minWidth={isDashboard ? "325px" : undefined} */
-    position: relative
+    position: relative;
+    height: 200px;
+    width: auto;
+    min-height: 220px;
+    min-width: 300px;
+    font-size: .8rem;
+    margin-bottom: 1em;
+}
+
+.desc{
+    font-size: .8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    pointer-events: none;
 }
