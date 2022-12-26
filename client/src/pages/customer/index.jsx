@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import Header from '../../components/hearder/Header';
 import { useGetCustomersQuery } from '../../features/api';
 import styles from './Customer.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment } from '../../features/pagination';
 
 const Customer = () => {
     const { data, isLoading } = useGetCustomersQuery();
 
-    console.log(data)
+    const page = useSelector(state => state.paginate.value)
+    const dispatch = useDispatch()
 
     const columns = [
         {
@@ -82,11 +86,9 @@ const Customer = () => {
                 <tbody
                     className={styles.border}
                 >
-                    {data?.slice(0, 20).map(field => {
+                    {data?.slice(page.start, page.end).map(field => {
                     return (
-                        <tr
-                            className={styles.border}
-                        >
+                        <tr className={styles.border}>
                             <td className={styles.border}>{field._id}</td>
                             <td className={styles.border}>{field.name}</td>
                             <td className={styles.border}>{field.email}</td>  
@@ -101,7 +103,14 @@ const Customer = () => {
             </table>
         </div>
 
-        <div className=''>
+        <div className={styles.pagination}>
+            <button
+                onClick={() => dispatch(decrement())}
+            >-</button>
+            <div>{page.page}</div>
+            <button
+                onClick={() => dispatch(increment())}
+            >+</button>
         </div>
     </div>
   )
