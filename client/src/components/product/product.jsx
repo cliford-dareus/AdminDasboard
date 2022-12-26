@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import styles from './productCard.module.css';
 
@@ -13,7 +14,23 @@ export const Product = ({
     stat,
   }) => {
     const [ isCollapse, setCollapse ] = useState(false);
-  
+
+    
+    
+    useEffect(() => {
+      if(!isCollapse) return
+      const timeOut = () => {
+        setTimeout(() => {
+          setCollapse(!isCollapse)
+        }, 5000)
+      }
+      timeOut();
+
+      return(() => {
+        clearTimeout(timeOut);
+      })
+    }, [isCollapse]);
+    
     return (
       <div
         className={styles.card}
@@ -37,6 +54,7 @@ export const Product = ({
           }}>
             ${Number(price).toFixed(2)}
           </p>
+
           {/* <Rating value={rating} readOnly /> */}
   
           <p style={{
@@ -47,8 +65,6 @@ export const Product = ({
         </div>
         <div>
           <button
-            // variant="primary"
-            // size="small"
             className={styles.btn}
             onClick={() => setCollapse(!isCollapse)}
           >
