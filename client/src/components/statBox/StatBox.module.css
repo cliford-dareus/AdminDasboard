@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: space-between;
     /* background-color: aquamarine; */
-    border-radius: 1rem;
+    border-radius : 0.55rem;
     background-color: #142038;
     font-size: .8rem;
     padding: 1.5em ;
@@ -17,3 +17,4 @@
     justify-content: space-between;
     align-items: center;
 }
+

@@ -5,6 +5,7 @@ import { useGetDashboardQuery } from '../../features/api';
 import styles from './dashboard.module.css'
 import StatBox from '../../components/statBox/statBox';
 import OverviewChart from '../../components/overView/OverviewChart';
+import BreakdownChart from '../../components/breakdownChart/BreakdownChart';
 
 const Dashboard = () => {
   const { data, isLoading } = useGetDashboardQuery();
@@ -51,7 +52,6 @@ const Dashboard = () => {
           >
             <OverviewChart
               view="sales"
-              
             />
           </div>
 
@@ -70,7 +70,27 @@ const Dashboard = () => {
             description="Since last month"
             icon={<IoStatsChartOutline />}
           />
-        
+
+          <div
+            className={styles.largebox}
+          >
+
+          </div>
+
+          <div
+            className={styles.mediumbox}
+          >
+            <p>Sales by Category</p>
+
+            <BreakdownChart 
+              
+            />
+
+            <p>
+              Breakdown of real states and information via category for revenue
+              made for this year and total sales.
+            </p>
+          </div>
       </div>
     </div>
   )

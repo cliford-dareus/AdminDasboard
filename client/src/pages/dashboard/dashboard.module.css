@@ -28,3 +28,10 @@
     padding: 1.5rem;
     border-radius : 0.55rem;
 } 
+
+.mediumbox{
+    grid-column: span 4;
+    grid-row: span 2;
+    background-color:  #142038;
+    border-radius : 0.55rem;
+}
