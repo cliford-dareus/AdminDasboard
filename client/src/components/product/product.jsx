@@ -3,6 +3,24 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styles from './productCard.module.css';
 
+const StarRating = ({ rating }) => {
+  return(
+    [...Array(5)].map((star, index) => {
+      return (
+        <span 
+          className={styles.star}
+          key={index}
+          style={{
+            color: index <= rating? 'red' : ''
+          }}
+        >
+          &#9733;
+        </span>
+      )
+    })
+  )
+}
+
 export const Product = ({
     _id,
     name,
@@ -14,9 +32,8 @@ export const Product = ({
     stat,
   }) => {
     const [ isCollapse, setCollapse ] = useState(false);
+    const [ isRating, setIsRating ] = useState(rating)
 
-    
-    
     useEffect(() => {
       if(!isCollapse) return
       const timeOut = () => {
@@ -55,7 +72,7 @@ export const Product = ({
             ${Number(price).toFixed(2)}
           </p>
 
-          {/* <Rating value={rating} readOnly /> */}
+          <StarRating rating={rating}/>
   
           <p style={{
             fontSize: '.7rem',
