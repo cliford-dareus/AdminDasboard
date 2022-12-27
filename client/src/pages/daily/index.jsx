@@ -46,10 +46,12 @@ const Daily = () => {
 
 
   return (
-    <div className={styles.daily}>
+    <div style={{height: '80vh'}}>
         <Header title='DAILY' subTitle='Chart of daily sales'/>
         <div className={styles.container}>
-            <ResponsiveLine
+
+
+            {data ? (<ResponsiveLine
                 data={formattedData}
                 theme={{
                     axis: {
@@ -149,8 +151,8 @@ const Daily = () => {
                         },
                       ],
                     },
-                  ]}
-            />
+                ]}
+            />) : (<>LOADING...</>)}
         </div>
     </div>
   )

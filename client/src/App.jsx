@@ -8,6 +8,8 @@ import Transaction from './pages/transaction';
 import Geography from './pages/geography';
 import Overview from './pages/overview';
 import Daily from './pages/daily';
+import Monthly from './pages/monthly';
+import Breakdown from './pages/breakdown';
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
             <Route path='/geography' element={<Geography/>}/>
             <Route path='/overview' element={<Overview/>}/>
             <Route path='/daily' element={<Daily />}/>
+            <Route path='/monthly' element={<Monthly />}/>
+            <Route path='/breakdown' element={<Breakdown />}/>
           </Route>
         </Routes>
       </BrowserRouter>

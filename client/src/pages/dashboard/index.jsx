@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   // console.log(data?.totalCustomers)
   return (
-    <div>
+    <div className={styles.dashboard}>
       <div className={styles.header}>
         <Header 
           title= 'Dashboard'
@@ -80,7 +80,9 @@ const Dashboard = () => {
           <div
             className={styles.mediumbox}
           >
-            <p style={{ fontSize: '.8rem'}}>Sales by Category</p>
+            <p style={{ fontSize: '.8rem'}}>
+              Sales by Category
+            </p>
 
             <BreakdownChart />
 

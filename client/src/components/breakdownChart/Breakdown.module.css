@@ -3,20 +3,21 @@
       /* width={undefined} */
       /* minHeight={isDashboard ? "325px" : undefined} */
       /* minWidth={isDashboard ? "325px" : undefined} */
-    position: relative;
-    height: 200px;
-    width: auto;
-    min-height: 220px;
-    min-width: 300px;
+    /* position: relative; */
+    /* height: 200px; */
+    /* width: auto; */
+    /* min-height: 220px; */
+    /* min-width: 300px; */
+    height: 220px;
     font-size: .8rem;
-    margin-bottom: 1em;
+    /* margin-bottom: .5em; */
 }
 
 .desc{
     font-size: .8rem;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 60%;
+    left: 60%;
     text-align: center;
     pointer-events: none;
 }
