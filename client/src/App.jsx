@@ -6,6 +6,7 @@ import Dashboard from './pages/dashboard';
 import Products from './pages/products';
 import Customer from './pages/customer';
 import Transaction from './pages/transaction';
+import Geography from './pages/geography';
 
 function App() {
 
@@ -15,10 +16,11 @@ function App() {
         <Routes >
           <Route element={ <Layout/>}>
             <Route path='/' element={ <Navigate to='/dashboard' replace/> }/>
-            <Route path='/dashboard' element={ <Dashboard/>}/>
-            <Route path='/products' element={ <Products/>} />
-            <Route path='/customers' element={ <Customer/>} />
-            <Route path='/transactions' element={ <Transaction/>} />
+            <Route path='/dashboard' element={<Dashboard/>}/>
+            <Route path='/products' element={<Products/>} />
+            <Route path='/customers' element={<Customer/>} />
+            <Route path='/transactions' element={<Transaction/>}/>
+            <Route path='/geography' element={<Geography/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

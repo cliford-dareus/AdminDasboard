@@ -18,7 +18,7 @@ const Transaction = () => {
         sort: JSON.stringify(sort),
         search,
     });
-    // console.log(data)
+    console.log(data)
 
     const columns = [
         {
@@ -100,6 +100,10 @@ const Transaction = () => {
                         })}
                     </tr>
                 </thead>
+
+                <tbody>
+
+                </tbody>
             </table>
         </div>
     </div>
