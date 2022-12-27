@@ -8,6 +8,8 @@ const Performance = () => {
     const userId = useSelector((state) => state.global.userId);
     const { data, isLoading } = useGetUserPerformanceQuery(userId);
 
+    console.log(data);
+
     const columns = [
         {
           field: "_id",
@@ -40,7 +42,7 @@ const Performance = () => {
       ];
 
   return (
-    <div>
+    <div className={styles.admin}>
         <Header title='PERFORMANCE' subTitle='Track your Affiliate Sales Performance Here' />
 
         <div className={styles.container}>
@@ -63,13 +65,13 @@ const Performance = () => {
                 </thead>
                         
                 <tbody>
-                    {data?.map((field) => {
+                    {data?.sales?.map((field) => {
                         return (
                             <tr className={styles.border}>
                                 <td className={styles.border}>{field._id}</td>
                                 <td className={styles.border}>{field.userId}</td>
                                 <td className={styles.border}>{field.createdAt}</td>  
-                                <td className={styles.border}>{field.products}</td>  
+                                <td className={styles.border}>{(field.products).length}</td>  
                                 <td className={styles.border}>{field.cost}</td>   
                             </tr>
                         )

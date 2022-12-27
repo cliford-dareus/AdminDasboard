@@ -2,6 +2,9 @@
 
 .container{
     width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    overflow-y: scroll;
     font-size: .8rem;
     margin-top: 1rem;
 }
