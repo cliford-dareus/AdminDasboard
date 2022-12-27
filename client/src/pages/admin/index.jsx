@@ -71,7 +71,7 @@ const Admin = () => {
                 </thead>
 
                 <tbody>
-                {data?.slice(0, 20).map(field => {
+                {data?.map(field => {
                     return (
                         <tr className={styles.border}>
                             <td className={styles.border}>{field._id}</td>

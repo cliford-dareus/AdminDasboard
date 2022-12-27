@@ -11,6 +11,7 @@ import Daily from './pages/daily';
 import Monthly from './pages/monthly';
 import Breakdown from './pages/breakdown';
 import Admin from './pages/admin';
+import Performance from './pages/performance';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/monthly' element={<Monthly />}/>
             <Route path='/breakdown' element={<Breakdown />}/>
             <Route path='/admin' element={<Admin />}/>
+            <Route path='/performance' element={<Performance />}/>
           </Route>
         </Routes>
       </BrowserRouter>
