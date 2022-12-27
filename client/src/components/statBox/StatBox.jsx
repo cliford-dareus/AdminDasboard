@@ -3,8 +3,6 @@ import styles from './StatBox.module.css';
 
 const StatBox = ({ title, icon, value, increase, description }) => {
 
-    console.log(value)
-
   return (
     <div className={styles.minibox}>
         <div className={styles.flex}>
