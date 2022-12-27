@@ -7,6 +7,7 @@ import Products from './pages/products';
 import Customer from './pages/customer';
 import Transaction from './pages/transaction';
 import Geography from './pages/geography';
+import Overview from './pages/overview';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path='/customers' element={<Customer/>} />
             <Route path='/transactions' element={<Transaction/>}/>
             <Route path='/geography' element={<Geography/>}/>
+            <Route path='/overview' element={<Overview/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
