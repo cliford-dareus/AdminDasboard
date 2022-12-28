@@ -11,6 +11,7 @@ const Dashboard = () => {
   const { data, isLoading } = useGetDashboardQuery();
 
   // console.log(data?.totalCustomers)
+  
   return (
     <div className={styles.dashboard}>
       <div className={styles.header}>

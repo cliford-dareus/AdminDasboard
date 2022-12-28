@@ -8,8 +8,9 @@ const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
 
   return (
-    <div className={styles.product}>
+    <div>
       <Header title='PRODUCTS' subTitle="See your list of products." />
+      <div className={styles.product}>
       { data || !isLoading? (
         <div
           className={styles.container}
@@ -40,6 +41,7 @@ const Products = () => {
           )}
         </div>
       ) : <> LOADING ...</>}
+      </div>
     </div>
   )
 };
